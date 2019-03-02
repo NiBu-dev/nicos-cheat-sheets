@@ -34,3 +34,13 @@ The app you created can be run using the command below.
 This opens up a new tab on your browser with the URL below.
 
     http://localhost:4200
+
+## Bootstrap
+
+To install bootstratp in the project:
+
+    npm install --save bootstrap@3
+
+Add the bootstratp to the project in the angular.json file, css array field:
+
+    "node_modules/bootstrap/dist/css/bootstrap.min.css"

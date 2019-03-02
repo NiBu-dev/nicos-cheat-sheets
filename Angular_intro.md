@@ -10,17 +10,6 @@
 
 **TypeScript** -> Compilation -> **JavaScript** -> **Browser**
 
-# Lecture 10 
-## Bootstrap
-
-To install bootstratp in the project:
-
-    npm install --save bootstrap@3
-
-Add the bootstratp to the project in the angular.json file, css array field:
-
-    "node_modules/bootstrap/dist/css/bootstrap.min.css"
-
 # Lecture 18
 ## Create an app component using CLI
 Create a component called servers
@@ -30,6 +19,12 @@ Create a component called servers
 or
 
     ng g c servers
+
+or
+
+    ng g c servers --spec false
+
+to skip the creation of the testing file
 
 ## Lecture 22
 ## Data binding
@@ -44,3 +39,30 @@ Databinding = Communication between the logic and view (functionality <> html te
     * Event binding ((event)="expression")
 * Combination of both directions (inout and output)
     * Two way binding ([(ngModel)]="data")
+
+## Lecture 32
+## Directives
+
+Directives = instructions in the DOM (almost like a component without a template)
+
+* Structural directives start with a star (*)
+
+Unlike structural directives, attribute directives don't add or remove elements. They only change the element they were placed on.
+
+## @Input and @Output
+
+@Input - decorator used to send data from parent to child. The data is binded in the parent.html:
+
+    [child_data]='parent_data'
+
+and sent to the child.html, where it is taken as an input:
+
+    @Input() child_data: string
+
+@Output - decorator used to send data from child to parent. Usually used to pass events. The event is binded in the parent.html:
+
+    (child_event)="parent_event_handler($event)"
+ 
+ and the event is sent from child as 
+ 
+     @Output() child_event = new EventEmitter(data: string)
