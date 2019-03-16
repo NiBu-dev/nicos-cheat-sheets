@@ -66,3 +66,36 @@ and sent to the child.html, where it is taken as an input:
  and the event is sent from child as 
  
      @Output() child_event = new EventEmitter(data: string)
+
+## Directives
+
+### Attribute directives
+
+Looks like a normal HTML  attribute (possibly with databinding or event binding)
+
+Only affect/change the element they are added to
+
+### Structural directives
+
+Looks like a normal HTML attribute but having a leading *
+
+Affect a whole area in the DOM (elements get added/removed)
+
+## Services
+
+Ussualy services are use to share data with several components.
+
+Services are hierachicall structured: i.e. the service provided in app.module.ts can be accessed within the all application. 
+On the other hand, the services defined at the leaf components of the application can be accessed only by that component, even overiding the similar service instance inherited from parent component.
+
+The services are provided by using the following definition within component:
+
+   providers: [ Service_dummy ]
+
+If using service within a service, the metadata has to be attached to the parent service, where the main service is used:
+
+    @Injectable()
+
+    export class Service_dummy {
+
+    }
