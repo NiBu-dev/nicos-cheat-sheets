@@ -26,6 +26,16 @@ or
 
 to skip the creation of the testing file
 
+or
+
+    ng g c new-component --module app
+
+to specify in which module to create the component
+
+    ng g p mypipe
+
+to create a pipe
+
 ## Lecture 22
 ## Data binding
 
